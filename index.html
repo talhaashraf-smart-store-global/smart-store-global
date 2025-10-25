@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THE SMART SHOP — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0f1115;--card:#151821;--text:#f9f9f9;--muted:#c9c9c9;--accent:#ffd000;--accent2:#ffe24d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .container{max-width:1200px;margin:0 auto;padding:28px}
+  .header{text-align:center;margin-bottom:30px}
+  .logo{height:100px;width:auto;border-radius:8px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto}
+  .brand{font-family:"Nunito Sans",sans-serif;font-weight:800;letter-spacing:.5px;font-size:36px}
+  .tag{color:var(--accent);font-weight:600;font-size:16px;margin-top:6px}
+  .tag small{color:#cfcfcf;display:block;margin-top:6px}
+  .hero{margin:22px 0;background:linear-gradient(180deg,rgba(255,208,0,.08),transparent);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:26px;text-align:center}
+  h1{font-size:clamp(26px,3.4vw,42px);margin:.4em 0}
+  .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:12px}
+  .tab{padding:10px 16px;background:rgba(255,208,0,.12);border-radius:10px;color:var(--accent);font-weight:700;text-decoration:none}
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:24px}
+  .feature{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:center}
+  /* Ensure full image shows */
+  .feature img{width:100%;height:auto;object-fit:contain;border-radius:12px;display:block;background:#000}
+  .feature h2{margin:.2em 0}
+  .btn{display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;padding:12px 18px;margin-top:10px;text-decoration:none}
+  .btn:hover{background:var(--accent2)}
+  .sidebox{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px}
+  .catlist a{display:inline-block;margin:6px 6px 0 0;padding:6px 10px;border-radius:999px;background:rgba(255,208,0,.12);color:var(--accent);font-weight:700;text-decoration:none}
+  .socials{margin-top:26px;text-align:center}
+  .socials a{margin:0 10px;color:var(--accent);font-weight:700;text-decoration:none;font-size:18px}
+  .socials a:hover{color:var(--accent2)}
+  .footer{margin:36px 0 10px;color:#a7a7a7;font-size:12px;text-align:center}
+  .blog {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 40px;
+    line-height: 1.8;
+  }
+  .blog h2 {
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+  .blog p {
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+  @media(max-width:980px){.grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <img class="logo" src="logo.jpg" alt="THE SMART SHOP logo">
+    <div class="brand">THE SMART SHOP</div>
+    <div class="tag">
+      Smart Picks. Smarter Living.
+      <small>Discover the best deals, trending products, and smarter ways to shop — all in one place!</small>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Explore Our Categories</h1>
+    <div class="tabs">
+      <a class="tab" href="#cat-health">Health</a>
+      <a class="tab" href="#cat-fitness">Fitness</a>
+      <a class="tab" href="#cat-tech">Tech</a>
+      <a class="tab" href="#cat-beauty">Beauty</a>
+      <a class="tab" href="#cat-baby">Baby</a>
+      <a class="tab" href="#cat-parenting">Parenting</a>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="feature">
+      <img src="homepage-moringa.png" alt="Moringa Magic product">
+      <div>
+        <h2>🌿 Moringa Magic — The “Miracle Tree” Doctors Are Talking About</h2>
+        <p class="sub">Natural energy, digestion support, healthier-looking skin. Learn why it’s trending.</p>
+        <a class="btn" href="moringa-magic.html">Learn More</a>
+      </div>
+    </div>
+
+    <aside class="sidebox">
+      <strong>Popular Categories</strong>
+      <div class="catlist">
+        <a href="#cat-health">Health</a>
+        <a href="#cat-fitness">Fitness</a>
+        <a href="#cat-tech">Tech</a>
+        <a href="#cat-beauty">Beauty</a>
+        <a href="#cat-baby">Baby</a>
+        <a href="#cat-parenting">Parenting</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- BLOG SECTION -->
+  <section class="blog">
+    <h2>Moringa Magic: The Natural Superfood Transforming Lives</h2>
+    <p>Whether you’re an influencer looking for the next wellness trend, a fitness enthusiast aiming to stay lean, or someone simply fighting everyday bloating and fatigue, <strong>Moringa Magic</strong> is your new go-to. This plant-based powerhouse, derived from <em>Moringa Oleifera</em> — known as the “Miracle Tree” — is nature’s answer to sustainable energy, clean nutrition, and effortless weight management.</p>
+
+    <p>Moringa is loaded with <strong>antioxidants</strong>, <strong>vitamin C</strong>, and essential amino acids that work together to combat inflammation, promote detoxification, and boost gut health. For those struggling with digestion or water retention, moringa acts as a natural <strong>anti-inflammatory</strong> and digestive supplement, helping reduce bloating while improving metabolism and energy levels throughout the day.</p>
+
+    <p>Unlike harsh weight loss pills or synthetic energy boosters, Moringa nourishes your body from within. It offers <strong>7x the vitamin C of oranges</strong> and <strong>9x the protein of spinach</strong>, making it one of the most nutrient-dense superfoods available. It supports lean muscle recovery for gym-goers, improves focus for busy professionals, and even enhances skin glow through its rich antioxidant profile.</p>
+
+    <p>For older adults or anyone seeking natural wellness, Moringa Magic is a daily dose of vitality. Regular use supports heart health, hormonal balance, and sustained energy — without caffeine crashes. It’s ideal for maintaining a healthy weight, supporting joint flexibility, and giving your immune system the natural defense it deserves.</p>
+
+    <p>Whether you blend it in smoothies, sprinkle it over meals, or take it in capsule form, Moringa Magic fits effortlessly into any lifestyle. Influencers love its green aesthetic and clean ingredient story, while fitness enthusiasts praise its plant-based protein and fast recovery benefits. And for anyone tired of bloating, fatigue, or stubborn belly fat — this is your moment to experience the <strong>magic of moringa</strong>.</p>
+
+    <a class="btn" href="moringa-magic.html">Read Full Blog</a>
+  </section>
+
+  <div class="socials">
+    <p>Follow us on</p>
+    <a href="#" id="facebook">Facebook</a>
+    <a href="#" id="instagram">Instagram</a>
+    <a href="#" id="youtube">YouTube</a>
+    <a href="#" id="tiktok">TikTok</a>
+  </div>
+
+  <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
+</div>
+</body>
+</html>
