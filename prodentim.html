@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ProDentim — THE SMART SHOP</title>
+
+<!-- Favicon (same as site) -->
+<link rel="icon" href="/logo.jpg" type="image/jpeg">
+<link rel="shortcut icon" href="/logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/logo.jpg">
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root{
+    --bg:#0f1115; --card:#151821; --text:#f9f9f9; --muted:#c9c9c9;
+    --accent:#ffd000; --accent2:#ffe24d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .container{max-width:1200px;margin:0 auto;padding:28px}
+
+  /* ---------- HEADER (same as homepage) ---------- */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 16px;background:#111;color:#fff;
+    position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
+  .brand-name{font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:18px;letter-spacing:.2px}
+  .tagline{font-size:12px;color:#cfcfcf;margin-top:2px}
+  .nav-actions{display:flex;align-items:center;gap:12px}
+  .dropdown{position:relative}
+  .dropbtn{background:var(--accent2);color:#111;border:none;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+  .dropdown-menu{
+    position:absolute;right:0;top:110%;background:#fff;color:#222;
+    min-width:220px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);
+    padding:6px;display:none;
+  }
+  .dropdown-menu a{display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none}
+  .dropdown-menu a:hover{background:#f3f4f6}
+  .dropdown:hover .dropdown-menu{display:block}
+
+  /* ---------- PAGE (same layout as Moringa) ---------- */
+  a{text-decoration:none}
+  .page{margin-top:18px}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:#0b0c10 url("/prodentim-hero-bg.png") center/cover no-repeat fixed; /* replace later */
+    min-height:52vh; display:grid; place-items:center;
+    border:1px solid rgba(255,255,255,.12); border-radius:16px; overflow:hidden;
+  }
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.7))}
+  .hero-inner{position:relative;z-index:1;max-width:980px;width:100%;padding:22px;display:grid;grid-template-columns:1fr 1.05fr;gap:22px}
+  .hero-card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px}
+  .hero-img{width:100%;height:auto;object-fit:contain;background:#000;border-radius:14px}
+  .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#eaeaea;font-weight:800;font-size:12px;letter-spacing:.3px}
+  h1{margin:.35em 0;color:#fff;font-size:clamp(26px,3.4vw,40px);line-height:1.15}
+  .sub{color:#cfd2d7;line-height:1.7;margin:.4em 0 1em}
+  .bullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 16px}
+  .bullets div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px;color:#ddd}
+  .ctas{display:flex;flex-wrap:wrap;gap:10px}
+  .cta{display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;padding:12px 18px}
+  .cta:hover{background:var(--accent2)}
+  .cta-ghost{display:inline-block;border-radius:12px;padding:11px 16px;border:1px solid rgba(255,255,255,.2);color:#fff}
+  .cta-ghost:hover{border-color:#fff}
+  @media (max-width:980px){ .hero{background-attachment:scroll;} .hero-inner{grid-template-columns:1fr} }
+
+  /* Cards / sections */
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;margin:18px 0}
+  .video{text-align:center}
+  .video iframe{width:100%;max-width:840px;height:472px;border:none;border-radius:12px}
+  h2.section{color:var(--accent);margin:4px 0 10px}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .feature{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+  .feature h4{margin:.2em 0;font-size:16px;color:#fff}
+  .feature p{margin:.3em 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+  @media (max-width:850px){.features{grid-template-columns:1fr}}
+  p{color:var(--muted)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .review{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+  .stars{color:#ffd000;font-size:16px;letter-spacing:1px}
+  .reviewer{color:#e6e6e6;font-weight:700;margin-top:8px}
+  @media (max-width:900px){.reviews{grid-template-columns:1fr}}
+  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .more .box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
+  .more .box h4{margin:.2em 0;color:#fff}
+  .more .box p{margin:.3em 0 0}
+  .actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .back{color:var(--accent);font-weight:800}
+  .back:hover{color:var(--accent2)}
+  .sticky-cta{position:sticky;bottom:12px;align-self:flex-end;margin-left:auto}
+  .sticky-cta .cta{box-shadow:0 8px 24px rgba(255,208,0,.3)}
+
+  /* ---------- FOOTER (same as homepage) ---------- */
+  .socials{margin-top:26px;text-align:center}
+  .socials a{margin:0 5px;text-decoration:none}
+  .socials a.facebook{color:#3b5998}
+  .socials a.instagram{color:#E4405F}
+  .footer{margin:36px 0 10px;color:#a7a7a7;font-size:12px;text-align:center}
+  .footer-links{text-align:center;margin-bottom:12px}
+  .footer-links a{color:var(--muted);margin:0 8px;text-decoration:none;font-size:14px}
+  .footer-links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="/" class="logo"><img src="logo.jpg" alt="Smart Store Global" /></a>
+      <div class="brand-text">
+        <strong class="brand-name">Smart Store Global</strong>
+        <div class="tagline">Deals, reviews & smarter shopping</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="dropdown">
+        <button class="dropbtn">Explore Categories ▾</button>
+        <div class="dropdown-menu">
+          <a href="#cat-health">Health</a>
+          <a href="#cat-fitness">Fitness</a>
+          <a href="#cat-tech">Tech</a>
+          <a href="#cat-beauty">Beauty</a>
+          <a href="#cat-baby">Baby</a>
+          <a href="#cat-parenting">Parenting</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero page">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <img class="hero-img" src="prodentim.png" alt="ProDentim"> <!-- replace image later -->
+      </div>
+      <div class="hero-card">
+        <div class="eyebrow">Oral Health • Editor’s Pick</div>
+        <h1>ProDentim — The Natural Probiotic for Stronger Teeth & Healthier Gums</h1>
+        <p class="sub">A clinically-inspired blend of friendly bacteria and botanicals designed to support gum health, fresh breath, enamel strength and a healthy oral microbiome.</p>
+
+        <div class="bullets">
+          <div>Replenishes “good bacteria” for a balanced oral microbiome.</div>
+          <div>Helps reduce plaque, stains and bad breath.</div>
+          <div>Supports gum health and a strong enamel barrier.</div>
+          <div>Non-GMO, stimulant-free, easy daily use.</div>
+        </div>
+
+        <div class="ctas">
+          <a class="cta" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
+          <a class="cta-ghost" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">Get Discount</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- VIDEO (optional: swap the YouTube id later) -->
+    <section class="card video">
+      <h2 class="section">Watch How It Works</h2>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ProDentim Video" allowfullscreen></iframe>
+    </section>
+
+    <!-- Features -->
+    <section class="card">
+      <h2 class="section">Why People Choose ProDentim</h2>
+      <div class="features">
+        <div class="feature"><h4>🦷 Healthy Gums</h4><p>Probiotics like Lactobacillus & Bifidobacterium help maintain a healthy gum environment.</p></div>
+        <div class="feature"><h4>🌿 Fresh Breath</h4><p>Balances odor-causing bacteria for long-lasting freshness.</p></div>
+        <div class="feature"><h4>🛡️ Enamel Support</h4><p>Formulation supports enamel remineralization and tooth strength.</p></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="card">
+      <h2 class="section">Real Reviews</h2>
+      <div class="reviews">
+        <div class="review"><div class="stars">★★★★★</div><p>“Breath stays fresh all day and my gums look healthier.”</p><div class="reviewer">Hassan R.</div></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Dental cleanings are easier now—way less plaque.”</p><div class="reviewer">Nadia A.</div></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>“Great daily probiotic—noticed a difference in 2 weeks.”</p><div class="reviewer">Bilal S.</div></div>
+      </div>
+    </section>
+
+    <!-- More Smart Picks -->
+    <section class="card">
+      <h2 class="section">More Smart Picks</h2>
+      <div class="more">
+        <div class="box"><h4><a href="moringa-magic.html" style="color:#fff">Moringa Magic</a></h4><p>Plant-powered energy and digestion support.</p></div>
+        <div class="box"><h4>Coming Soon — Sleep Aid</h4><p>Drift off naturally with this top-rated supplement.</p></div>
+        <div class="box"><h4>From the Blog — Oral Care Tips</h4><p>Daily habits that protect your gums and enamel.</p></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="back" href="index.html">← Back to Home</a>
+      <div class="sticky-cta">
+        <a class="cta" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-conditions.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+  <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
+
+</div>
+</body>
+</html>
