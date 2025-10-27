@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ProDentim — THE SMART SHOP</title>
+<title>ProDentim — Natural Oral Probiotic | THE SMART SHOP</title>
 
-<!-- Favicon (same as site) -->
+<!-- Favicon -->
 <link rel="icon" href="/logo.jpg" type="image/jpeg">
 <link rel="shortcut icon" href="/logo.jpg" type="image/jpeg">
 <link rel="apple-touch-icon" href="/logo.jpg">
@@ -23,7 +23,7 @@
   body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
   .container{max-width:1200px;margin:0 auto;padding:28px}
 
-  /* ---------- HEADER (same as homepage) ---------- */
+  /* ---------- HEADER ---------- */
   .topbar{
     display:flex;justify-content:space-between;align-items:center;
     padding:14px 16px;background:#111;color:#fff;
@@ -45,14 +45,10 @@
   .dropdown-menu a:hover{background:#f3f4f6}
   .dropdown:hover .dropdown-menu{display:block}
 
-  /* ---------- PAGE (same layout as Moringa) ---------- */
-  a{text-decoration:none}
-  .page{margin-top:18px}
-
-  /* HERO */
+  /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    background:#0b0c10 url("/prodentim-hero-bg.png") center/cover no-repeat fixed; /* replace later */
+    background:#0b0c10 url("/prodentim-hero-bg.png") center/cover no-repeat fixed;
     min-height:52vh; display:grid; place-items:center;
     border:1px solid rgba(255,255,255,.12); border-radius:16px; overflow:hidden;
   }
@@ -66,39 +62,40 @@
   .bullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 16px}
   .bullets div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px;color:#ddd}
   .ctas{display:flex;flex-wrap:wrap;gap:10px}
-  .cta{display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;padding:12px 18px}
+  .cta{display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;padding:12px 18px;text-decoration:none}
   .cta:hover{background:var(--accent2)}
-  .cta-ghost{display:inline-block;border-radius:12px;padding:11px 16px;border:1px solid rgba(255,255,255,.2);color:#fff}
+  .cta-ghost{display:inline-block;border-radius:12px;padding:11px 16px;border:1px solid rgba(255,255,255,.2);color:#fff;text-decoration:none}
   .cta-ghost:hover{border-color:#fff}
-  @media (max-width:980px){ .hero{background-attachment:scroll;} .hero-inner{grid-template-columns:1fr} }
+  @media (max-width:980px){.hero{background-attachment:scroll;} .hero-inner{grid-template-columns:1fr}}
 
-  /* Cards / sections */
+  /* ---------- CONTENT ---------- */
   .card{background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;margin:18px 0}
-  .video{text-align:center}
-  .video iframe{width:100%;max-width:840px;height:472px;border:none;border-radius:12px}
   h2.section{color:var(--accent);margin:4px 0 10px}
+  p{color:var(--muted)}
+  ul{color:#cfcfcf;line-height:1.7}
+  table{border-collapse:collapse;width:100%;color:#ddd;margin-top:10px}
+  th,td{padding:8px;border:1px solid rgba(255,255,255,.1);text-align:left}
+  tr:nth-child(even){background:rgba(255,255,255,.03)}
+
   .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .feature{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
   .feature h4{margin:.2em 0;font-size:16px;color:#fff}
   .feature p{margin:.3em 0 0;color:var(--muted);font-size:14px;line-height:1.6}
   @media (max-width:850px){.features{grid-template-columns:1fr}}
-  p{color:var(--muted)}
+
   .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .review{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
   .stars{color:#ffd000;font-size:16px;letter-spacing:1px}
   .reviewer{color:#e6e6e6;font-weight:700;margin-top:8px}
   @media (max-width:900px){.reviews{grid-template-columns:1fr}}
-  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .more .box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px}
-  .more .box h4{margin:.2em 0;color:#fff}
-  .more .box p{margin:.3em 0 0}
+
   .actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-  .back{color:var(--accent);font-weight:800}
+  .back{color:var(--accent);font-weight:800;text-decoration:none}
   .back:hover{color:var(--accent2)}
   .sticky-cta{position:sticky;bottom:12px;align-self:flex-end;margin-left:auto}
   .sticky-cta .cta{box-shadow:0 8px 24px rgba(255,208,0,.3)}
 
-  /* ---------- FOOTER (same as homepage) ---------- */
+  /* ---------- FOOTER ---------- */
   .socials{margin-top:26px;text-align:center}
   .socials a{margin:0 5px;text-decoration:none}
   .socials a.facebook{color:#3b5998}
@@ -137,15 +134,15 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero page">
+  <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <img class="hero-img" src="prodentim.png" alt="ProDentim"> <!-- replace image later -->
+        <img class="hero-img" src="prodentim.png" alt="ProDentim">
       </div>
       <div class="hero-card">
         <div class="eyebrow">Oral Health • Editor’s Pick</div>
         <h1>ProDentim — The Natural Probiotic for Stronger Teeth & Healthier Gums</h1>
-        <p class="sub">A clinically-inspired blend of friendly bacteria and botanicals designed to support gum health, fresh breath, enamel strength and a healthy oral microbiome.</p>
+        <p class="sub">A clinically-inspired blend of friendly bacteria and botanicals designed to support gum health, fresh breath, enamel strength, and a balanced oral microbiome.</p>
 
         <div class="bullets">
           <div>Replenishes “good bacteria” for a balanced oral microbiome.</div>
@@ -155,60 +152,73 @@
         </div>
 
         <div class="ctas">
-          <a class="cta" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
-          <a class="cta-ghost" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">Get Discount</a>
+          <a class="cta" href="https://prodentim24.com/text.php?aff=talhaashraf1108" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
+          <a class="cta-ghost" href="https://prodentim24.com/text.php?aff=talhaashraf1108" target="_blank" rel="noopener nofollow noreferrer">Get Discount</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- VIDEO (optional: swap the YouTube id later) -->
-    <section class="card video">
-      <h2 class="section">Watch How It Works</h2>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ProDentim Video" allowfullscreen></iframe>
-    </section>
-
-    <!-- Features -->
-    <section class="card">
-      <h2 class="section">Why People Choose ProDentim</h2>
-      <div class="features">
-        <div class="feature"><h4>🦷 Healthy Gums</h4><p>Probiotics like Lactobacillus & Bifidobacterium help maintain a healthy gum environment.</p></div>
-        <div class="feature"><h4>🌿 Fresh Breath</h4><p>Balances odor-causing bacteria for long-lasting freshness.</p></div>
-        <div class="feature"><h4>🛡️ Enamel Support</h4><p>Formulation supports enamel remineralization and tooth strength.</p></div>
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="card">
-      <h2 class="section">Real Reviews</h2>
-      <div class="reviews">
-        <div class="review"><div class="stars">★★★★★</div><p>“Breath stays fresh all day and my gums look healthier.”</p><div class="reviewer">Hassan R.</div></div>
-        <div class="review"><div class="stars">★★★★★</div><p>“Dental cleanings are easier now—way less plaque.”</p><div class="reviewer">Nadia A.</div></div>
-        <div class="review"><div class="stars">★★★★☆</div><p>“Great daily probiotic—noticed a difference in 2 weeks.”</p><div class="reviewer">Bilal S.</div></div>
-      </div>
-    </section>
-
-    <!-- More Smart Picks -->
-    <section class="card">
-      <h2 class="section">More Smart Picks</h2>
-      <div class="more">
-        <div class="box"><h4><a href="moringa-magic.html" style="color:#fff">Moringa Magic</a></h4><p>Plant-powered energy and digestion support.</p></div>
-        <div class="box"><h4>Coming Soon — Sleep Aid</h4><p>Drift off naturally with this top-rated supplement.</p></div>
-        <div class="box"><h4>From the Blog — Oral Care Tips</h4><p>Daily habits that protect your gums and enamel.</p></div>
-      </div>
-    </section>
-
-    <div class="actions">
-      <a class="back" href="index.html">← Back to Home</a>
-      <div class="sticky-cta">
-        <a class="cta" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
-      </div>
+  <!-- FEATURES -->
+  <section class="card">
+    <h2 class="section">Why People Choose ProDentim</h2>
+    <div class="features">
+      <div class="feature"><h4>🦷 Healthy Gums</h4><p>Probiotics like Lactobacillus & Bifidobacterium help maintain gum health and reduce harmful bacteria.</p></div>
+      <div class="feature"><h4>🌿 Fresh Breath</h4><p>Balances odor-causing bacteria for long-lasting freshness.</p></div>
+      <div class="feature"><h4>🛡️ Enamel Support</h4><p>Supports enamel remineralization and tooth strength.</p></div>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- REVIEWS -->
+  <section class="card">
+    <h2 class="section">Real Reviews</h2>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>“Breath stays fresh all day and my gums look healthier.”</p><div class="reviewer">Hassan R.</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>“Dental cleanings are easier now—way less plaque.”</p><div class="reviewer">Nadia A.</div></div>
+      <div class="review"><div class="stars">★★★★☆</div><p>“Great daily probiotic—noticed a difference in 2 weeks.”</p><div class="reviewer">Bilal S.</div></div>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section class="card">
+    <h2 class="section">Unlock a Healthier Smile with ProDentim</h2>
+    <p>Did you know your mouth contains as many bacterial cells as some parts of your gut? When the balance between good and bad bacteria is disturbed, it can lead to gum issues, bad breath, or weak enamel. That’s where <strong>ProDentim</strong> comes in — a cutting-edge <strong>oral probiotic supplement</strong> designed to support stronger teeth, healthier gums, and fresher breath.</p>
+
+    <h3 style="color:#ffe24d;">Key Benefits</h3>
+    <ul>
+      <li><strong>Supports Gum Health:</strong> Probiotic strains help reduce gum inflammation and bleeding while balancing your oral microbiome.</li>
+      <li><strong>Fresher Breath & Reduced Plaque:</strong> Targets odor-causing bacteria for all-day freshness and cleaner teeth.</li>
+      <li><strong>Stronger Tooth Enamel:</strong> Minerals in the formula aid in enamel remineralization and protection against decay.</li>
+      <li><strong>Balances Oral Microbiome:</strong> Rather than killing all bacteria, it replenishes the mouth with beneficial ones for lasting results.</li>
+      <li><strong>Easy Daily Use:</strong> Comes in chewable tablet form — no need for extra mouthwash or complex routines.</li>
+    </ul>
+
+    <h3 style="color:#ffe24d;">Ingredients Breakdown</h3>
+    <table>
+      <tr><th>Ingredient</th><th>Role & Benefit</th></tr>
+      <tr><td><strong>Lactobacillus reuteri</strong></td><td>Supports gum tissue health and helps control harmful bacteria.</td></tr>
+      <tr><td><strong>Lactobacillus paracasei & Bifidobacterium lactis (BL-04®)</strong></td><td>Maintain a healthy bacterial balance for less plaque and better gum strength.</td></tr>
+      <tr><td><strong>Inulin (prebiotic fiber)</strong></td><td>Feeds the “good bacteria” so they thrive and crowd out the bad ones.</td></tr>
+      <tr><td><strong>Malic Acid</strong></td><td>Found in strawberries; supports tooth whiteness and natural cleansing.</td></tr>
+      <tr><td><strong>Tricalcium Phosphate</strong></td><td>Strengthens teeth by replenishing essential minerals for enamel health.</td></tr>
+      <tr><td><strong>Peppermint & Botanicals</strong></td><td>Naturally freshen breath and offer mild antimicrobial support.</td></tr>
+    </table>
+
+    <h3 style="color:#ffe24d;">How to Use & What to Expect</h3>
+    <p>Use one chewable tablet daily (after brushing). Let it dissolve in your mouth for maximum absorption. Many users notice improved freshness and gum comfort within a few weeks of consistent use. Continue regular brushing, flossing, and dental checkups — ProDentim is a supplement, not a replacement for hygiene.</p>
+
+    <h3 style="color:#ffe24d;">Final Thoughts</h3>
+    <p>If you’re looking for <strong>more than just cleaner teeth</strong> and want to improve the root cause of gum and enamel problems, <strong>ProDentim</strong> provides a natural and effective approach. With its blend of probiotics, prebiotics, minerals, and plant extracts, it helps restore oral balance, promote fresher breath, and maintain a confident smile.</p>
+  </section>
+
+  <!-- CTA / FOOTER -->
+  <div class="actions">
+    <a class="back" href="index.html">← Back to Home</a>
+    <div class="sticky-cta">
+      <a class="cta" href="https://prodentim24.com/text.php?aff=talhaashraf1108" target="_blank" rel="noopener nofollow noreferrer">See Offer</a>
+    </div>
+  </div>
+
   <div class="socials">
     <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
     <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
@@ -222,7 +232,6 @@
     <a href="contact.html">Contact Us</a>
   </div>
   <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
-
 </div>
 </body>
 </html>
