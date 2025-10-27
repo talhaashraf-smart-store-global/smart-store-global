@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Site Styles -->
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 
@@ -23,7 +23,6 @@
   <div id="site-header"></div>
 
   <main class="container">
-
     <!-- HOW WE HELP (dark theme) -->
     <section class="how">
       <h2>How We Help You Choose Smarter</h2>
@@ -54,11 +53,11 @@
     <!-- Feature + Trending Deals Sidebar -->
     <div class="grid">
       <div class="feature">
-        <img src="homepage-moringa.png" alt="Moringa Magic product">
+        <img src="/homepage-moringa.png" alt="Moringa Magic product">
         <div>
           <h2>🌿 Moringa Magic — The “Miracle Tree” Doctors Are Talking About</h2>
           <p class="sub">Natural energy, digestion support, healthier-looking skin. Learn why it’s trending.</p>
-          <a class="btn" href="moringa-magic.html">Learn More</a>
+          <a class="btn" href="/moringa-magic.html">Learn More</a>
         </div>
       </div>
 
@@ -147,7 +146,7 @@
             <h3 class="post-title">Moringa Magic: What We Liked & What We Didn’t</h3>
             <div class="post-meta">Honest review • No fluff</div>
           </div>
-          <a class="post-link" href="moringa-magic.html">Read Review <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="post-link" href="/moringa-magic.html">Read Review <i class="fa-solid fa-arrow-right"></i></a>
         </article>
       </div>
     </section>
@@ -158,11 +157,12 @@
   <div id="site-footer"></div>
 
   <!-- Component loader -->
-  <script src="assets/components.js"></script>
+  <script src="/assets/components.js"></script>
   <script>
+    // Not required (auto-runs), but explicit is fine:
     loadPartials({
-      header: 'partials/header.html',
-      footer: 'partials/footer.html'
+      header: "/partials/header.html",
+      footer: "/partials/footer.html",
     });
   </script>
 </body>
