@@ -25,12 +25,6 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.smart-store-global.com/moringa-magic.html" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Moringa Magic — Natural Energy, Digestion & Skin Support" />
-<meta name="twitter:description" content="See why Moringa is trending. Benefits, video deep dive, reviews, FAQs, and trusted offer." />
-<meta name="twitter:image" content="https://www.smart-store-global.com/moringa-magic.png" />
-
 <style>
 :root{
   --bg:#0f1115;--card:#151821;--text:#f9f9f9;--muted:#c9c9c9;
@@ -40,7 +34,7 @@
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .container{max-width:1200px;margin:0 auto;padding:28px}
 
-/* Header (same as homepage) */
+/* Header */
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#111;color:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.1);}
 .brand{display:flex;align-items:center;gap:12px}
 .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
@@ -54,18 +48,31 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 .dropdown-menu a:hover{background:#f3f4f6}
 .dropdown.open .dropdown-menu{display:block}
 
-/* Hero */
+/* HERO — tighter image box */
 .hero{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;
-  background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px
+  display:grid;
+  grid-template-columns:minmax(260px,380px) 1fr; /* smaller left column */
+  gap:18px;align-items:stretch;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px;
 }
-/* 👉 Show the whole photo (no crop) */
 .hero .left{
-  background:#0a0a0a;border-radius:12px;display:flex;align-items:center;justify-content:center;
-  padding:10px; /* small breathing room */
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0a0a0a;
+  padding:8px;
 }
 .hero .left img{
-  max-width:100%;max-height:420px;width:auto;height:auto;object-fit:contain;display:block;
+  width:100%;
+  height:auto;
+  max-height:520px;
+  object-fit:contain;
+  display:block;
+  border-radius:8px;
 }
 .hero .right{display:flex;flex-direction:column;gap:12px}
 .kicker{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#111;background:var(--accent2);border-radius:999px;padding:6px 10px;width:max-content}
@@ -99,6 +106,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
+  .hero .left{max-width:520px;margin:0 auto;}
   .bullets{grid-template-columns:1fr}
   .two{grid-template-columns:1fr}
 }
@@ -107,6 +115,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 <body>
 <div class="container">
 
+<!-- HEADER -->
 <header class="topbar">
   <div class="brand">
     <a href="/" class="logo"><img src="logo.jpg" alt="Smart Store Global" /></a>
@@ -133,7 +142,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 <!-- HERO -->
 <section class="hero">
   <div class="left">
-    <!-- Use your existing product/hero image filename -->
     <img src="moringa-magic.png" alt="Moringa Magic product">
   </div>
   <div class="right">
@@ -148,17 +156,10 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
       <div class="bullet">✔ Skin & hair nourishment</div>
     </div>
 
-    <!-- CTA (your real affiliate link kept) -->
-    <a class="btn" href="https://www.digistore24.com/redir/562310/talhaashraf1108/" target="_blank" rel="sponsored noopener">
-      See Offer <i class="fa-solid fa-arrow-right"></i>
-    </a>
-    <a class="btn" href="https://www.digistore24.com/redir/562310/talhaashraf1108/" target="_blank" rel="sponsored noopener">
-      Click Here to Avail Discount
-    </a>
+    <a class="btn" href="https://www.digistore24.com/redir/562310/talhaashraf1108/" target="_blank" rel="sponsored noopener">See Offer →</a>
+    <a class="btn" href="https://www.digistore24.com/redir/562310/talhaashraf1108/" target="_blank" rel="sponsored noopener">Click Here to Avail Discount</a>
 
-    <p class="subtle" style="margin-top:6px;">
-      <strong>Disclosure:</strong> We may earn a commission if you purchase through our links — at no extra cost to you.
-    </p>
+    <p class="subtle"><strong>Disclosure:</strong> We may earn a commission if you purchase through our links — at no extra cost to you.</p>
   </div>
 </section>
 
@@ -166,8 +167,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 <section class="section two">
   <div class="card video">
     <h2>Watch the Moringa Magic Overview</h2>
-    <!-- ✅ Your exact YouTube link embedded -->
-    <iframe src="https://www.youtube.com/embed/OhD9C89hrqk" title="Moringa Magic Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/OhD9C89hrqk" title="Moringa Magic Overview" allowfullscreen></iframe>
   </div>
   <div class="card">
     <h2>Why People Love Moringa Magic</h2>
@@ -218,7 +218,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
   <a href="/index.html" style="color:var(--accent2);text-decoration:none;">Home</a>
 </p>
 
-<!-- FOOTER (same as homepage) -->
+<!-- FOOTER -->
 <div class="socials">
   <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
   <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
@@ -229,7 +229,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
   <a href="/privacy-policy.html">Privacy Policy</a>
   <a href="/terms-conditions.html">Terms & Conditions</a>
   <a href="/contact.html">Contact Us</a>
-  <a href="/disclosure.html">Disclosure</a>
 </div>
 <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
 
