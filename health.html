@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Health Products — Smart Store Global</title>
+  <title>Health — Smart Store Global</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/logo.jpg" type="image/jpeg">
@@ -13,15 +13,6 @@
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Discover our top health products — including Gluco Shield Pro and Moringa — for better wellness, energy, and balance.">
-  <meta name="keywords" content="health supplements, Gluco Shield Pro, Moringa, natural health, wellness products">
-  <meta property="og:title" content="Top Health Products | Smart Store Global">
-  <meta property="og:description" content="Explore Smart Store Global's top-rated health supplements for natural wellness and balanced living.">
-  <meta property="og:image" content="/logo.jpg">
-  <meta property="og:url" content="https://www.smart-store-global.com/health.html">
-  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     body {
@@ -109,7 +100,7 @@
 
     main {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 40px auto;
       text-align: center;
     }
@@ -117,45 +108,37 @@
     h1 {
       color: #28a745;
       font-size: 2em;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .product-card {
-      background-color: #fff;
-      border-radius: 15px;
+    .product-block {
+      background-color: #ffffff;
+      border-radius: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 20px;
-      text-align: center;
+      padding: 30px 20px;
+      margin-bottom: 40px;
       transition: transform 0.3s ease;
     }
 
-    .product-card:hover {
+    .product-block:hover {
       transform: translateY(-5px);
     }
 
-    .product-card img {
+    .product-block img {
       width: 100%;
-      max-width: 250px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 260px;
+      border-radius: 15px;
+      margin-bottom: 20px;
     }
 
-    .product-card h3 {
+    .product-block h3 {
       color: #2c3e50;
-      font-size: 1.2em;
-      margin: 10px 0;
+      font-size: 1.4em;
+      margin-bottom: 10px;
     }
 
-    .product-card p {
-      font-size: 0.95em;
+    .product-block p {
+      font-size: 1em;
       color: #555;
       margin-bottom: 20px;
     }
@@ -218,32 +201,28 @@
   <main>
     <h1>Top Health Products</h1>
 
-    <div class="product-grid">
+    <!-- Gluco Shield Pro (New Block Added) -->
+    <div class="product-block">
+      <img src="/gluco-shield-pro.jpg" alt="Gluco Shield Pro">
+      <h3>Gluco Shield Pro</h3>
+      <p>Natural formula to support healthy blood sugar levels and energy balance using herbal ingredients.</p>
+      <a href="/gluco-shield-pro.html" class="btn">See Details</a>
+    </div>
 
-      <!-- Gluco Shield Pro -->
-      <div class="product-card">
-        <img src="/gluco-shield-pro.jpg" alt="Gluco Shield Pro Bottle">
-        <h3>Gluco Shield Pro</h3>
-        <p>Natural formula to support healthy blood sugar levels and energy balance using herbal ingredients.</p>
-        <a href="/gluco-shield-pro.html" class="btn">See Details</a>
-      </div>
+    <!-- Moringa -->
+    <div class="product-block">
+      <img src="/moringa.jpg" alt="Moringa Supplement">
+      <h3>Moringa — The Miracle Tree</h3>
+      <p>Boost your health with Moringa’s powerful antioxidants, vitamins, and natural detox properties.</p>
+      <a href="/moringa.html" class="btn">See Details</a>
+    </div>
 
-      <!-- Moringa Product -->
-      <div class="product-card">
-        <img src="/moringa.jpg" alt="Moringa Supplement">
-        <h3>Moringa — The Miracle Tree</h3>
-        <p>Boost your health with Moringa’s powerful antioxidants, vitamins, and natural detox properties.</p>
-        <a href="/moringa.html" class="btn">See Details</a>
-      </div>
-
-      <!-- Prodentim (optional extra) -->
-      <div class="product-card">
-        <img src="/prodentim.jpg" alt="Prodentim Probiotic Supplement">
-        <h3>ProDentim</h3>
-        <p>Advanced oral probiotic designed to strengthen gums and promote fresh breath naturally.</p>
-        <a href="/prodentim.html" class="btn">See Details</a>
-      </div>
-
+    <!-- Prodentim -->
+    <div class="product-block">
+      <img src="/prodentim.jpg" alt="Prodentim Probiotic">
+      <h3>ProDentim</h3>
+      <p>Advanced oral probiotic designed to strengthen gums and promote fresh breath naturally.</p>
+      <a href="/prodentim.html" class="btn">See Details</a>
     </div>
   </main>
 
