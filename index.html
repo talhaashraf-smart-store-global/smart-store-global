@@ -35,6 +35,7 @@
     display:flex;justify-content:space-between;align-items:center;
     padding:14px 16px;background:#111;color:#fff;
     position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
   }
   .brand{display:flex;align-items:center;gap:12px}
   .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
@@ -44,7 +45,7 @@
   .tagline{font-size:12px;color:#cfcfcf;margin-top:2px}
   .nav-actions{display:flex;align-items:center;gap:12px}
 
-  /* Dropdown */
+  /* Dropdown (CLICK to toggle) */
   .dropdown{position:relative}
   .dropbtn{
     background:var(--accent2);color:#111;border:none;border-radius:10px;
@@ -53,13 +54,13 @@
   .dropdown-menu{
     position:absolute;right:0;top:110%;background:#fff;color:#222;
     min-width:220px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);
-    padding:6px;display:none;
+    padding:6px;display:none;z-index:200;
   }
   .dropdown-menu a{
     display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none;
   }
   .dropdown-menu a:hover{background:#f3f4f6}
-  .dropdown:hover .dropdown-menu{display:block}
+  .dropdown.open .dropdown-menu{display:block} /* shown only when JS adds .open */
 
   /* ---------- HOW WE HELP ---------- */
   h1{font-size:clamp(26px,3.4vw,42px);margin:.4em 0}
@@ -108,8 +109,17 @@
     padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);
   }
   .deal-item:last-child{border-bottom:none}
-  .deal-img{width:56px;height:56px;border-radius:10px;overflow:hidden;background:#0a0a0a}
-  .deal-img img{width:100%;height:100%;object-fit:cover}
+
+  /* ✅ Image fit tweak for 56×56 thumbs */
+  .deal-img{
+    width:56px;height:56px;border-radius:10px;overflow:hidden;
+    background:#0a0a0a;display:flex;align-items:center;justify-content:center;
+  }
+  .deal-img img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;
+  }
+
   .deal-title{font-weight:800;font-size:14px;color:#f9f9f9}
   .deal-meta{font-size:12px;color:var(--muted)}
   .badge{display:inline-block;background:var(--accent2);color:#111;font-weight:800;border-radius:999px;padding:2px 8px;font-size:11px;margin-top:6px}
@@ -135,6 +145,7 @@
   }
   .nl-form button:hover{background:#ffd000}
 
+  /* ---------- Articles ---------- */
   .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
   .post-card{background:#14161a;border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
   .post-card img{width:100%;height:160px;object-fit:cover}
@@ -172,9 +183,9 @@
       </div>
     </div>
     <div class="nav-actions">
-      <div class="dropdown">
-        <button class="dropbtn">Explore Categories ▾</button>
-        <div class="dropdown-menu">
+      <div class="dropdown" id="categoryMenu">
+        <button class="dropbtn" id="dropToggle">Explore Categories ▾</button>
+        <div class="dropdown-menu" aria-label="Categories">
           <a href="#cat-health">Health</a>
           <a href="#cat-fitness">Fitness</a>
           <a href="#cat-tech">Tech</a>
@@ -198,10 +209,10 @@
   </section>
 
   <!-- FEATURE + TRENDING DEALS -->
-  <div class="grid">
+  <div class="grid" id="cat-health">
     <!-- Featured card (Moringa) -->
     <div class="feature">
-      <img src="homepage-moringa.png" alt="Moringa Magic product">
+      <img src="moringa-hero-bg.png" alt="Moringa Magic product hero">
       <div>
         <h2>🌿 Moringa Magic — The “Miracle Tree” Doctors Are Talking About</h2>
         <p class="sub">Natural energy, digestion support, healthier-looking skin. Learn why it’s trending.</p>
@@ -209,14 +220,14 @@
       </div>
     </div>
 
-    <!-- Trending Deals (now with Moringa + ProDentim) -->
+    <!-- Trending Deals (now with your real images) -->
     <aside class="sidebox deals">
       <h3>🔥 Trending Deals</h3>
 
       <!-- Moringa Magic -->
       <div class="deal-item">
         <div class="deal-img">
-          <img src="https://via.placeholder.com/120x120.png?text=Moringa" alt="Moringa Magic">
+          <img src="moringa-magic.png" alt="Moringa Magic product">
         </div>
         <div>
           <div class="deal-title">Moringa Magic — Natural Energy</div>
@@ -230,7 +241,7 @@
       <!-- ProDentim -->
       <div class="deal-item">
         <div class="deal-img">
-          <img src="https://via.placeholder.com/120x120.png?text=ProDentim" alt="ProDentim">
+          <img src="PRODENTIM.jpg" alt="ProDentim supplement bottle">
         </div>
         <div>
           <div class="deal-title">ProDentim — Oral Probiotic</div>
@@ -247,13 +258,16 @@
   <section class="digest" id="newsletter">
     <h2>Stay Updated — New Deals & Honest Reviews</h2>
     <p class="lead">Join the Smart Shop list and get the latest picks, price drops, and product breakdowns delivered to your inbox.</p>
-    <form class="nl-form"><input type="email" placeholder="Enter your email" required><button type="submit">Subscribe</button></form>
+    <form class="nl-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
   <!-- SOCIALS + FOOTER LINKS -->
   <div class="socials">
-    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
-    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram fa-lg"></i></a>
   </div>
 
   <div class="footer-links">
@@ -266,5 +280,28 @@
   <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
 
 </div>
+
+<!-- ✅ Dropdown fix script -->
+<script>
+  (function(){
+    const menu = document.getElementById("categoryMenu");
+    const toggle = document.getElementById("dropToggle");
+
+    if (!menu || !toggle) return;
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target)) menu.classList.remove("open");
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") menu.classList.remove("open");
+    });
+  })();
+</script>
 </body>
 </html>
