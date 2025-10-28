@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Smart Store Global — Natural Supplements for a Healthier You</title>
 
+<!-- ✅ Google Analytics Tag -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KYXJPBFDKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KYXJPBFDKS');
+</script>
+
 <!-- Favicon -->
 <link rel="icon" href="/logo.jpg" type="image/jpeg">
 <link rel="shortcut icon" href="/logo.jpg" type="image/jpeg">
@@ -110,14 +120,12 @@
   }
   .deal-item:last-child{border-bottom:none}
 
-  /* ✅ Image fit tweak for 56×56 thumbs */
   .deal-img{
     width:56px;height:56px;border-radius:10px;overflow:hidden;
     background:#0a0a0a;display:flex;align-items:center;justify-content:center;
   }
   .deal-img img{
-    width:100%;height:100%;object-fit:cover;
-    display:block;
+    width:100%;height:100%;object-fit:cover;display:block;
   }
 
   .deal-title{font-weight:800;font-size:14px;color:#f9f9f9}
@@ -145,17 +153,6 @@
   }
   .nl-form button:hover{background:#ffd000}
 
-  /* ---------- Articles ---------- */
-  .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
-  .post-card{background:#14161a;border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-  .post-card img{width:100%;height:160px;object-fit:cover}
-  .post-body{padding:14px}
-  .post-tag{display:inline-block;background:rgba(255,226,77,.18);color:#ffe24d;font-weight:800;font-size:11px;border-radius:999px;padding:2px 8px;margin-bottom:8px}
-  .post-title{color:#fff;font-weight:800;font-size:16px;margin:0 0 6px}
-  .post-meta{color:#a9a9a9;font-size:12px}
-  .post-link{margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:#ffe24d;text-decoration:none;border-top:1px solid rgba(255,255,255,.06)}
-  .post-link:hover{background:#1a1d23}
-
   /* ---------- Footer ---------- */
   .socials{margin-top:26px;text-align:center}
   .socials a{margin:0 5px;text-decoration:none}
@@ -167,9 +164,9 @@
   .footer-links a:hover{text-decoration:underline}
 
   @media(max-width:980px){.grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}}
-  @media(max-width:720px){.articles{grid-template-columns:1fr}}
 </style>
 </head>
+
 <body>
 <div class="container">
 
@@ -220,11 +217,10 @@
       </div>
     </div>
 
-    <!-- Trending Deals (now with your real images) -->
+    <!-- Trending Deals -->
     <aside class="sidebox deals">
       <h3>🔥 Trending Deals</h3>
 
-      <!-- Moringa Magic -->
       <div class="deal-item">
         <div class="deal-img">
           <img src="moringa-magic.png" alt="Moringa Magic product">
@@ -238,7 +234,6 @@
         </div>
       </div>
 
-      <!-- ProDentim -->
       <div class="deal-item">
         <div class="deal-img">
           <img src="PRODENTIM.jpg" alt="ProDentim supplement bottle">
@@ -281,23 +276,19 @@
 
 </div>
 
-<!-- ✅ Dropdown fix script -->
+<!-- ✅ Dropdown fix -->
 <script>
   (function(){
     const menu = document.getElementById("categoryMenu");
     const toggle = document.getElementById("dropToggle");
-
     if (!menu || !toggle) return;
-
     toggle.addEventListener("click", (e) => {
       e.stopPropagation();
       menu.classList.toggle("open");
     });
-
     document.addEventListener("click", (e) => {
       if (!menu.contains(e.target)) menu.classList.remove("open");
     });
-
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") menu.classList.remove("open");
     });
@@ -305,4 +296,3 @@
 </script>
 </body>
 </html>
-
