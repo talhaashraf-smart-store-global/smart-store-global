@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.smart-store-global.com/</loc></url>
-  <url><loc>https://www.smart-store-global.com/about</loc></url>
-  <url><loc>https://www.smart-store-global.com/contact</loc></url>
-  <url><loc>https://www.smart-store-global.com/privacy-policy</loc></url>
-  <url><loc>https://www.smart-store-global.com/terms-conditions</loc></url>
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://www.smart-store-global.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/privacy-policy.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/terms-conditions.html</loc>
+  </url>
+
+  <!-- Category Pages -->
+  <url>
+    <loc>https://www.smart-store-global.com/health.html</loc>
+  </url>
+
+  <!-- Product Pages -->
+  <url>
+    <loc>https://www.smart-store-global.com/moringa-magic.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/prodentim.html</loc>
+  </url>
+  <url>
+    <loc>https://www.smart-store-global.com/gluco-shield-pro.html</loc>
+  </url>
+
 </urlset>
