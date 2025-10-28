@@ -1,234 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Health — Smart Store Global</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Health — Smart Store Global</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="/logo.jpg" type="image/jpeg">
-  <link rel="shortcut icon" href="/logo.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="/logo.jpg">
+<!-- Favicon -->
+<link rel="icon" href="/logo.jpg" type="image/jpeg">
+<link rel="shortcut icon" href="/logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/logo.jpg">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito Sans', sans-serif;
-      background-color: #f8f9fa;
-      color: #222;
-    }
+<style>
+  :root{
+    --bg:#0f1115;
+    --card:#151821;
+    --text:#f9f9f9;
+    --muted:#c9c9c9;
+    --accent:#ffd000;
+    --accent2:#ffe24d;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+  }
+  .container{max-width:1200px;margin:0 auto;padding:28px}
 
-    header {
-      background-color: #ffffff;
-      padding: 15px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  /* ---------- Header ---------- */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 16px;background:#111;color:#fff;
+    position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
+  .brand-name{
+    font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:18px;letter-spacing:.2px
+  }
+  .tagline{font-size:12px;color:#cfcfcf;margin-top:2px}
+  .nav-actions{display:flex;align-items:center;gap:12px}
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: auto;
-    }
+  .dropdown{position:relative}
+  .dropbtn{
+    background:var(--accent2);color:#111;border:none;border-radius:10px;
+    padding:10px 14px;font-weight:800;cursor:pointer;
+  }
+  .dropdown-menu{
+    position:absolute;right:0;top:110%;background:#fff;color:#222;
+    min-width:220px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);
+    padding:6px;display:none;z-index:200;
+  }
+  .dropdown-menu a{
+    display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none;
+  }
+  .dropdown-menu a:hover{background:#f3f4f6}
+  .dropdown.open .dropdown-menu{display:block}
 
-    .logo {
-      font-size: 1.6em;
-      font-weight: 800;
-      color: #2c3e50;
-      text-decoration: none;
-    }
+  /* ---------- Layout ---------- */
+  h1,h2{font-family:"Nunito Sans",sans-serif}
+  h1{font-size:clamp(26px,3.4vw,38px);margin-top:24px;text-align:center;color:var(--accent2)}
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:24px}
+  .feature{
+    background:var(--card);border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;padding:16px;display:grid;grid-template-columns:1.2fr 1fr;
+    gap:16px;align-items:center;
+  }
+  .feature img{
+    width:100%;height:auto;object-fit:cover;border-radius:12px;display:block;background:#000
+  }
+  .feature h2{margin:.2em 0}
+  .feature p{color:var(--muted)}
+  .btn{
+    display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;
+    padding:12px 18px;margin-top:10px;text-decoration:none
+  }
+  .btn:hover{background:var(--accent2)}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
+  /* ---------- Sidebox ---------- */
+  .sidebox{
+    background:var(--card);border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;padding:14px
+  }
+  .deals h3{margin:0 0 12px;font-size:18px;color:#fff}
+  .deal-item{
+    display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:center;
+    padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .deal-item:last-child{border-bottom:none}
+  .deal-img{
+    width:56px;height:56px;border-radius:10px;overflow:hidden;
+    background:#0a0a0a;display:flex;align-items:center;justify-content:center;
+  }
+  .deal-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  .deal-title{font-weight:800;font-size:14px;color:#f9f9f9}
+  .deal-meta{font-size:12px;color:var(--muted)}
+  .badge{display:inline-block;background:var(--accent2);color:#111;font-weight:800;border-radius:999px;padding:2px 8px;font-size:11px;margin-top:6px}
+  .deal-price{font-weight:800;color:var(--accent2);margin-top:6px;font-size:14px}
+  .deal-btn{display:inline-block;margin-top:8px;background:var(--accent);color:#111;font-weight:800;padding:8px 10px;border-radius:10px;text-decoration:none}
+  .deal-btn:hover{background:#ffe24d}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+  /* ---------- Footer ---------- */
+  .socials{margin-top:26px;text-align:center}
+  .socials a{margin:0 5px;text-decoration:none}
+  .socials a.facebook{color:#3b5998}
+  .socials a.instagram{color:#E4405F}
+  .footer{margin:36px 0 10px;color:#a7a7a7;font-size:12px;text-align:center}
+  .footer-links{text-align:center;margin-bottom:12px}
+  .footer-links a{color:var(--muted);margin:0 8px;text-decoration:none;font-size:14px}
+  .footer-links a:hover{text-decoration:underline}
 
-    nav a:hover {
-      color: #28a745;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      border-radius: 6px;
-      top: 100%;
-      left: 0;
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f9f9f9;
-    }
-
-    .dropdown:focus-within .dropdown-content {
-      display: block;
-    }
-
-    main {
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
-      text-align: center;
-    }
-
-    h1 {
-      color: #28a745;
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-
-    .product-block {
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 30px 20px;
-      margin-bottom: 40px;
-      transition: transform 0.3s ease;
-    }
-
-    .product-block:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-block img {
-      width: 100%;
-      max-width: 260px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
-    .product-block h3 {
-      color: #2c3e50;
-      font-size: 1.4em;
-      margin-bottom: 10px;
-    }
-
-    .product-block p {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #28a745;
-      color: white;
-      padding: 10px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #218838;
-    }
-
-    footer {
-      background-color: #ffffff;
-      padding: 25px;
-      text-align: center;
-      border-top: 1px solid #eee;
-      color: #555;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #28a745;
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
+  @media(max-width:980px){.grid{grid-template-columns:1fr}.feature{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-  <header>
-    <div class="nav-container">
-      <a href="/index.html" class="logo">Smart Store Global</a>
-      <nav>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li class="dropdown" tabindex="0">
-            <a href="#">Explore Categories <i class="fa fa-caret-down"></i></a>
-            <div class="dropdown-content">
-              <a href="/health.html">Health</a>
-              <a href="/fitness.html">Fitness</a>
-              <a href="/beauty.html">Beauty</a>
-            </div>
-          </li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="/" class="logo"><img src="logo.jpg" alt="Smart Store Global" /></a>
+      <div class="brand-text">
+        <strong class="brand-name">Smart Store Global</strong>
+        <div class="tagline">Deals, reviews & smarter shopping</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="dropdown" id="categoryMenu">
+        <button class="dropbtn" id="dropToggle">Explore Categories ▾</button>
+        <div class="dropdown-menu" aria-label="Categories">
+          <a href="/health.html">Health</a>
+          <a href="/fitness.html">Fitness</a>
+          <a href="/beauty.html">Beauty</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <h1>Top Health Products</h1>
+  <!-- HEALTH SECTION -->
+  <h1>Top Health Products</h1>
 
-    <!-- Gluco Shield Pro (New Block Added) -->
-    <div class="product-block">
-      <img src="/gluco-shield-pro.jpg" alt="Gluco Shield Pro">
-      <h3>Gluco Shield Pro</h3>
-      <p>Natural formula to support healthy blood sugar levels and energy balance using herbal ingredients.</p>
-      <a href="/gluco-shield-pro.html" class="btn">See Details</a>
+  <div class="grid" id="health-products">
+    <!-- Featured: Gluco Shield Pro -->
+    <div class="feature">
+      <img src="gluco-shield-pro.jpg" alt="Gluco Shield Pro bottle">
+      <div>
+        <h2>🛡️ Gluco Shield Pro — Natural Blood Sugar Support</h2>
+        <p>Support balanced blood sugar and boost daily energy naturally with a blend of powerful herbs and vitamins.</p>
+        <a class="btn" href="gluco-shield-pro.html">See Details</a>
+      </div>
     </div>
 
-    <!-- Moringa -->
-    <div class="product-block">
-      <img src="/moringa.jpg" alt="Moringa Supplement">
-      <h3>Moringa — The Miracle Tree</h3>
-      <p>Boost your health with Moringa’s powerful antioxidants, vitamins, and natural detox properties.</p>
-      <a href="/moringa.html" class="btn">See Details</a>
-    </div>
+    <!-- Trending Deals Sidebar -->
+    <aside class="sidebox deals">
+      <h3>🔥 Trending Health Deals</h3>
 
-    <!-- Prodentim -->
-    <div class="product-block">
-      <img src="/prodentim.jpg" alt="Prodentim Probiotic">
-      <h3>ProDentim</h3>
-      <p>Advanced oral probiotic designed to strengthen gums and promote fresh breath naturally.</p>
-      <a href="/prodentim.html" class="btn">See Details</a>
-    </div>
-  </main>
+      <!-- Gluco Shield Pro -->
+      <div class="deal-item">
+        <div class="deal-img">
+          <img src="gluco-shield-pro.jpg" alt="Gluco Shield Pro bottle">
+        </div>
+        <div>
+          <div class="deal-title">Gluco Shield Pro</div>
+          <div class="deal-meta">Blood sugar • Energy</div>
+          <span class="badge">New</span>
+          <div class="deal-price">Special Offer</div>
+          <a class="deal-btn" href="gluco-shield-pro.html">View Deal →</a>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Smart Store Global. All Rights Reserved.</p>
-    <p><a href="/privacy.html">Privacy Policy</a> | <a href="/disclaimer.html">Disclaimer</a></p>
-  </footer>
+      <!-- Moringa -->
+      <div class="deal-item">
+        <div class="deal-img">
+          <img src="moringa-magic.png" alt="Moringa Magic product">
+        </div>
+        <div>
+          <div class="deal-title">Moringa Magic — Natural Energy</div>
+          <div class="deal-meta">Top rated • Antioxidants</div>
+          <span class="badge">Best Value</span>
+          <div class="deal-price">Special Offer</div>
+          <a class="deal-btn" href="moringa-magic.html">View Deal →</a>
+        </div>
+      </div>
+
+      <!-- ProDentim -->
+      <div class="deal-item">
+        <div class="deal-img">
+          <img src="PRODENTIM.jpg" alt="ProDentim bottle">
+        </div>
+        <div>
+          <div class="deal-title">ProDentim — Oral Probiotic</div>
+          <div class="deal-meta">Gum & breath support</div>
+          <span class="badge">Editor’s Pick</span>
+          <div class="deal-price">Special Offer</div>
+          <a class="deal-btn" href="prodentim.html">View Deal →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-conditions.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+  <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
+
+</div>
+
+<!-- Dropdown toggle script -->
+<script>
+(function(){
+  const menu=document.getElementById("categoryMenu");
+  const toggle=document.getElementById("dropToggle");
+  if(!menu||!toggle)return;
+  toggle.addEventListener("click",e=>{
+    e.stopPropagation();
+    menu.classList.toggle("open");
+  });
+  document.addEventListener("click",e=>{
+    if(!menu.contains(e.target))menu.classList.remove("open");
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape")menu.classList.remove("open");
+  });
+})();
+</script>
 </body>
 </html>
