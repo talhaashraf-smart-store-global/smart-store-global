@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Health — Smart Store Global</title>
+
+<link rel="icon" href="/logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root{--bg:#0f1115;--card:#151821;--text:#f9f9f9;--muted:#c9c9c9;--accent:#ffd000;--accent2:#ffe24d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .container{max-width:1200px;margin:0 auto;padding:28px}
+
+  /* Header */
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#111;color:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.1)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
+  .brand-name{font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:18px}
+  .tagline{font-size:12px;color:#cfcfcf;margin-top:2px}
+  .nav-actions{display:flex;align-items:center;gap:12px}
+  .dropdown{position:relative}
+  .dropbtn{background:var(--accent2);color:#111;border:none;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+  .dropdown-menu{position:absolute;right:0;top:110%;background:#fff;color:#222;min-width:220px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:6px;display:none}
+  .dropdown-menu a{display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none}
+  .dropdown-menu a:hover{background:#f3f4f6}
+  .dropdown:hover .dropdown-menu{display:block}
+
+  /* Page */
+  .pagehead{margin:12px 0 18px}
+  .title{font-size:clamp(24px,3.6vw,36px);font-weight:800;letter-spacing:.2px}
+  .subtitle{color:#cfcfcf;max-width:820px}
+
+  /* Grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+  @media(max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+  /* Card */
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .thumb{width:100%;height:180px;background:#0b0b0b}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .body{padding:14px;display:flex;flex-direction:column;gap:6px}
+  .tag{display:inline-block;background:rgba(255,226,77,.18);color:#ffe24d;font-weight:800;font-size:11px;border-radius:999px;padding:2px 8px}
+  .name{font-weight:800;color:#fff;margin:2px 0 0}
+  .meta{font-size:12px;color:#a9a9a9}
+  .desc{color:#cfcfcf;font-size:14px;line-height:1.6}
+  .link{margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:#111;background:var(--accent);text-decoration:none;font-weight:800}
+  .link:hover{background:var(--accent2)}
+
+  /* Footer */
+  .socials{margin-top:26px;text-align:center}
+  .socials a{margin:0 5px;text-decoration:none}
+  .socials a.facebook{color:#3b5998}
+  .socials a.instagram{color:#E4405F}
+  .footer{margin:36px 0 10px;color:#a7a7a7;font-size:12px;text-align:center}
+  .footer-links{text-align:center;margin-bottom:12px}
+  .footer-links a{color:var(--muted);margin:0 8px;text-decoration:none;font-size:14px}
+  .footer-links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="/" class="logo"><img src="logo.jpg" alt="Smart Store Global" /></a>
+      <div class="brand-text">
+        <strong class="brand-name">Smart Store Global</strong>
+        <div class="tagline">Deals, reviews & smarter shopping</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="dropdown">
+        <button class="dropbtn">Explore Categories ▾</button>
+        <div class="dropdown-menu">
+          <a href="health.html">Health</a>
+          <a href="#cat-fitness">Fitness</a>
+          <a href="#cat-tech">Tech</a>
+          <a href="#cat-beauty">Beauty</a>
+          <a href="#cat-baby">Baby</a>
+          <a href="#cat-parenting">Parenting</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="pagehead">
+    <div class="title">Health</div>
+    <p class="subtitle">Curated health picks from trusted partners. Explore natural supplements, probiotics, and wellness essentials.</p>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="grid">
+    <!-- ProDentim (external offer) -->
+    <article class="card">
+      <div class="thumb"><img src="https://via.placeholder.com/600x400.png?text=ProDentim" alt="ProDentim"></div>
+      <div class="body">
+        <span class="tag">Probiotic</span>
+        <h3 class="name">ProDentim — Oral Probiotic</h3>
+        <div class="meta">Gum health • Fresh breath</div>
+        <p class="desc">Friendly bacteria + botanicals to balance your oral microbiome for healthier gums and fresher breath.</p>
+        <a class="link" href="https://prodentim24.com/text.php?aff=talhaashraf1108" target="_blank" rel="noopener nofollow noreferrer">
+          See Offer <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Moringa Magic (internal page) -->
+    <article class="card">
+      <div class="thumb"><img src="https://via.placeholder.com/600x400.png?text=Moringa+Magic" alt="Moringa Magic"></div>
+      <div class="body">
+        <span class="tag">Detox</span>
+        <h3 class="name">Moringa Magic — Miracle Tree</h3>
+        <div class="meta">Natural energy • Digestion</div>
+        <p class="desc">Plant-powered support for daily energy, digestion, and skin. Learn why moringa is trending.</p>
+        <a class="link" href="moringa-magic.html">
+          Learn More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Placeholders — replace with the real products you’ll share -->
+    <article class="card">
+      <div class="thumb"><img src="https://via.placeholder.com/600x400.png?text=Sleep+Aid" alt="Sleep Aid"></div>
+      <div class="body">
+        <span class="tag">Sleep</span>
+        <h3 class="name">Sleep Aid — Nightly Calm</h3>
+        <div class="meta">Deep rest • Non-habit forming</div>
+        <p class="desc">Gentle ingredients that support deeper sleep and morning freshness.</p>
+        <a class="link" href="#" target="_blank" rel="noopener nofollow noreferrer">See Offer <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="https://via.placeholder.com/600x400.png?text=Collagen+Glow" alt="Collagen Glow"></div>
+      <div class="body">
+        <span class="tag">Beauty</span>
+        <h3 class="name">Collagen Glow — Skin & Hair</h3>
+        <div class="meta">Elasticity • Nail strength</div>
+        <p class="desc">Hydrolyzed peptides to support skin elasticity, hair strength, and nail growth.</p>
+        <a class="link" href="#" target="_blank" rel="noopener nofollow noreferrer">See Offer <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="https://via.placeholder.com/600x400.png?text=Magnesium+Glycinate" alt="Magnesium Glycinate"></div>
+      <div class="body">
+        <span class="tag">Calm</span>
+        <h3 class="name">Magnesium Glycinate — Relax & Recover</h3>
+        <div class="meta">Sleep • Muscle recovery</div>
+        <p class="desc">Highly bioavailable magnesium for calm mind, quality sleep, and muscle relaxation.</p>
+        <a class="link" href="#" target="_blank" rel="noopener nofollow noreferrer">See Offer <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-conditions.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+  <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
+
+</div>
+</body>
+</html>
