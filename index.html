@@ -6,6 +6,7 @@
 <title>Smart Store Global — Natural Supplements for a Healthier You</title>
 
 <!-- ✅ Google Analytics Tag -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYXJPBFDKS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -69,7 +70,7 @@
     display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none;
   }
   .dropdown-menu a:hover{background:#f3f4f6}
-  .dropdown.open .dropdown-menu{display:block}
+  .dropdown.open .dropdown-menu{display:block} /* shown only when JS adds .open */
 
   /* ---------- HOW WE HELP ---------- */
   h1{font-size:clamp(26px,3.4vw,42px);margin:.4em 0}
@@ -118,27 +119,49 @@
     padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);
   }
   .deal-item:last-child{border-bottom:none}
-  .deal-img img{width:100%;height:100%;object-fit:cover;display:block;}
 
-  /* ---------- ARTICLES FIX ---------- */
-  .post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
-  .post-card img{
+  .deal-img{
+    width:56px;height:56px;border-radius:10px;overflow:hidden;
+    background:#0a0a0a;display:flex;align-items:center;justify-content:center;
+  }
+  .deal-img img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+
+  .deal-title{font-weight:800;font-size:14px;color:#f9f9f9}
+  .deal-meta{font-size:12px;color:var(--muted)}
+  .badge{display:inline-block;background:var(--accent2);color:#111;font-weight:800;border-radius:999px;padding:2px 8px;font-size:11px;margin-top:6px}
+  .deal-price{font-weight:800;color:var(--accent2);margin-top:6px;font-size:14px}
+  .deal-btn{display:inline-block;margin-top:8px;background:var(--accent);color:#111;font-weight:800;padding:8px 10px;border-radius:10px;text-decoration:none}
+  .deal-btn:hover{background:#ffe24d}
+
+  /* ---------- Newsletter ---------- */
+  .digest{
+    background:#0c0d0f;border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;padding:36px 24px;margin:28px 0 10px;
+  }
+  .digest h2{text-align:center;margin:0 0 8px;font-size:clamp(22px,3.6vw,30px);color:#fff}
+  .digest p.lead{text-align:center;max-width:820px;margin:0 auto 20px;color:#cfcfcf}
+  .nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+  .nl-form input[type="email"]{
+    background:#14161a;color:#fff;border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;padding:12px 14px;min-width:280px;outline:none;
+  }
+  .nl-form button{
+    background:var(--accent2);color:#111;font-weight:800;border:none;
+    border-radius:12px;padding:12px 16px;cursor:pointer;
+  }
+  .nl-form button:hover{background:#ffd000}
+
+  /* ---------- ARTICLES: ensure images fit boxes ---------- */
+  .articles .post-card img{
     width:100%;
     height:200px;
     object-fit:cover;
     display:block;
-    border-bottom:1px solid rgba(255,255,255,.06);
   }
-  .post-card{background:#151821;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;}
-  .post-card h3{color:#fff;font-size:16px;margin:6px 0;}
-  .post-card p{color:#cfcfcf;font-size:14px;line-height:1.5;}
-  .post-card .read-btn{
-    margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;
-    color:#111;background:#ffe24d;font-weight:800;text-decoration:none;
-  }
-  .post-card .read-btn:hover{background:#ffd000;}
 
-  /* ---------- FOOTER ---------- */
+  /* ---------- Footer ---------- */
   .socials{margin-top:26px;text-align:center}
   .socials a{margin:0 5px;text-decoration:none}
   .socials a.facebook{color:#3b5998}
@@ -192,6 +215,7 @@
 
   <!-- FEATURE + TRENDING DEALS -->
   <div class="grid" id="cat-health">
+    <!-- Featured card (Moringa) -->
     <div class="feature">
       <img src="moringa-hero-bg.png" alt="Moringa Magic product hero">
       <div>
@@ -201,10 +225,14 @@
       </div>
     </div>
 
+    <!-- Trending Deals -->
     <aside class="sidebox deals">
       <h3>🔥 Trending Deals</h3>
+
       <div class="deal-item">
-        <div class="deal-img"><img src="moringa-magic.png" alt="Moringa Magic product"></div>
+        <div class="deal-img">
+          <img src="moringa-magic.png" alt="Moringa Magic product">
+        </div>
         <div>
           <div class="deal-title">Moringa Magic — Natural Energy</div>
           <div class="deal-meta">Top rated • Editor’s pick</div>
@@ -213,8 +241,11 @@
           <a class="deal-btn" href="moringa-magic.html">View Deal →</a>
         </div>
       </div>
+
       <div class="deal-item">
-        <div class="deal-img"><img src="PRODENTIM.jpg" alt="ProDentim supplement bottle"></div>
+        <div class="deal-img">
+          <img src="PRODENTIM.jpg" alt="ProDentim supplement bottle">
+        </div>
         <div>
           <div class="deal-title">ProDentim — Oral Probiotic</div>
           <div class="deal-meta">Fresh breath • Gum support</div>
@@ -225,48 +256,55 @@
       </div>
     </aside>
   </div>
-
   <!-- ARTICLES SECTION -->
-  <section class="articles" id="articles">
-    <h2 style="text-align:center; color:#fff; margin-bottom:20px;">Latest Articles</h2>
-    <div class="post-grid">
+<section class="articles" id="articles">
+  <h2 style="text-align:center; color:#fff; margin-bottom:20px;">Latest Articles</h2>
 
-      <article class="post-card">
-        <img src="article-health-concerns.jpg" alt="Health Concerns & How Supplements Help">
-        <div style="padding:14px;">
-          <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Wellness</span>
-          <h3>Health Concerns & How Supplements Help</h3>
-          <p>Explore how natural supplements and vitamins support common health issues like fatigue, digestion, and blood sugar management. Featuring key insights on Moringa.</p>
-        </div>
-        <a href="health-concerns-supplements.html" class="read-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </article>
+  <div class="post-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
 
-      <article class="post-card">
-        <img src="article-baby-strollers.jpg" alt="How Quality Baby Strollers Help On Rough Terrain">
-        <div style="padding:14px;">
-          <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Parenting</span>
-          <h3>How Quality Baby Strollers Help On Rough Terrain</h3>
-          <p>Discover how high-quality strollers improve baby comfort and sleep on rough paths. Learn what features truly matter for stability and safety.</p>
-        </div>
-        <a href="baby-strollers-terrain.html" class="read-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </article>
+    <!-- Article 1: Health Concerns -->
+    <article class="post-card" style="background:#151821;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+      <img src="article-health-concerns.jpg" alt="Health Concerns & How Supplements Help" style="width:100%;height:200px;object-fit:cover;display:block;">
+      <div style="padding:14px;">
+        <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Wellness</span>
+        <h3 style="color:#fff;font-size:16px;margin:6px 0;">Health Concerns & How Supplements Help</h3>
+        <p style="color:#cfcfcf;font-size:14px;line-height:1.5;">Explore how natural supplements and vitamins support common health issues like fatigue, digestion, and blood sugar management. Featuring key insights on Moringa.</p>
+      </div>
+      <a href="health-concerns-supplements.html" style="margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:#111;background:#ffe24d;font-weight:800;text-decoration:none;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+    </article>
 
-      <article class="post-card">
-        <img src="article-wellness-trends-2025.jpg" alt="Wellness Trends 2025">
-        <div style="padding:14px;">
-          <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Trends</span>
-          <h3>Wellness Trends 2025: What’s Next for Health</h3>
-          <p>From personalized nutrition to plant-forward lifestyles — explore the top wellness movements shaping 2025.</p>
-        </div>
-        <a href="wellness-trends-2025.html" class="read-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
-      </article>
+    <!-- Article 2: Baby Strollers -->
+    <article class="post-card" style="background:#151821;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+      <img src="article-baby-strollers.jpg" alt="How Quality Baby Strollers Help On Rough Terrain" style="width:100%;height:200px;object-fit:cover;display:block;">
+      <div style="padding:14px;">
+        <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Parenting</span>
+        <h3 style="color:#fff;font-size:16px;margin:6px 0;">How Quality Baby Strollers Help On Rough Terrain</h3>
+        <p style="color:#cfcfcf;font-size:14px;line-height:1.5;">Discover how high-quality strollers improve baby comfort and sleep on rough paths. Learn what features truly matter for stability and safety.</p>
+      </div>
+      <a href="baby-strollers-terrain.html" style="margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:#111;background:#ffe24d;font-weight:800;text-decoration:none;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+    </article>
 
-    </div>
-  </section>
+    <!-- Article 3: Wellness Trends 2025 -->
+    <article class="post-card" style="background:#151821;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+      <img src="article-wellness-trends-2025.jpg" alt="Wellness Trends 2025" style="width:100%;height:200px;object-fit:cover;display:block;">
+      <div style="padding:14px;">
+        <span style="display:inline-block;background:#ffe24d;color:#111;font-weight:800;font-size:11px;border-radius:999px;padding:3px 10px;">Trends</span>
+        <h3 style="color:#fff;font-size:16px;margin:6px 0;">Wellness Trends 2025: What’s Next for Health</h3>
+        <p style="color:#cfcfcf;font-size:14px;line-height:1.5;">From personalized nutrition to plant-forward lifestyles — explore the top wellness movements shaping 2025.</p>
+      </div>
+      <a href="wellness-trends-2025.html" style="margin-top:auto;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:#111;background:#ffe24d;font-weight:800;text-decoration:none;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+    </article>
+
+  </div>
+</section>
+
+  </div>
 
   <div style="text-align:center;margin-top:30px;">
     <a href="articles.html" style="display:inline-block;background:#ffe24d;color:#111;padding:12px 24px;border-radius:12px;font-weight:800;text-decoration:none;">See All Articles →</a>
   </div>
+</section>
+
 
   <!-- NEWSLETTER -->
   <section class="digest" id="newsletter">
