@@ -351,5 +351,115 @@
     });
   })();
 </script>
+
+<!-- === Cookie Consent + Affiliate Param Saver (Smart Store Global) === -->
+<div id="cookie-consent" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#111;border:1px solid rgba(255,255,255,.12);color:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);">
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between;row-gap:10px;">
+    <div style="max-width:820px;line-height:1.5;">
+      We use cookies to improve your experience, analyze traffic, and support affiliate tracking. 
+      See our <a href="privacy-policy.html" style="color:#ffe24d;text-decoration:underline;">Privacy Policy</a>.
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button id="cookie-accept" style="background:#ffe24d;color:#111;font-weight:800;border:none;border-radius:10px;padding:10px 14px;cursor:pointer;">Accept</button>
+      <button id="cookie-decline" style="background:#222;color:#fff;font-weight:700;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 14px;cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- Small cookie helpers ---------- */
+const Cookie = {
+  set: (name, value, days=365) => {
+    const d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
+  },
+  get: (name) => {
+    const k = name + "=";
+    return decodeURIComponent(document.cookie.split(';').map(c=>c.trim()).find(c=>c.indexOf(k)===0)?.substring(k.length) || "");
+  },
+  del: (name) => { document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"; }
+};
+
+/* ---------- Show banner only if not decided ---------- */
+(function initCookieBanner(){
+  const decided = Cookie.get("cookiesAccepted"); // "true" | "false" | ""
+  const banner = document.getElementById("cookie-consent");
+  if (!banner) return;
+
+  // If no decision yet, show the banner
+  if (decided === "") banner.style.display = "block";
+
+  // If user accepted before, make sure Analytics consent is granted
+  if (decided === "true") grantAnalyticsConsent();
+
+  document.getElementById("cookie-accept")?.addEventListener("click", () => {
+    Cookie.set("cookiesAccepted","true",365);
+    banner.style.display = "none";
+    grantAnalyticsConsent();
+  });
+
+  document.getElementById("cookie-decline")?.addEventListener("click", () => {
+    Cookie.set("cookiesAccepted","false",365);
+    banner.style.display = "none";
+    denyAnalyticsConsent();
+  });
+})();
+
+/* ---------- Google Consent Mode (soft gate for GA already on page) ---------- */
+function grantAnalyticsConsent(){
+  if (typeof gtag === "function") {
+    gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
+  }
+}
+function denyAnalyticsConsent(){
+  if (typeof gtag === "function") {
+    gtag('consent', 'update', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+  }
+}
+
+/* ---------- Save affiliate/marketing parameters for attribution ---------- */
+(function saveAffiliateParams(){
+  const keysToSave = [
+    'aff','affiliate','affid','ref','ref_id','hop',
+    'subid','sub_id','sid','s1','s2','s3',
+    'utm_source','utm_medium','utm_campaign','utm_term','utm_content',
+    'gclid','gbraid','wbraid','fbclid'
+  ];
+
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams(url.search);
+  let found = false;
+  const saved = {};
+
+  keysToSave.forEach(k => {
+    if (params.has(k)) { saved[k] = params.get(k); found = true; }
+  });
+
+  if (found) {
+    Cookie.set('aff_params', JSON.stringify(saved), 90); // keep 90 days
+    if (!Cookie.get('first_visit')) Cookie.set('first_visit', new Date().toISOString(), 365);
+  }
+
+  // Optional: auto-append saved params to outbound links marked with data-append-aff="true"
+  const savedStr = Cookie.get('aff_params');
+  if (savedStr) {
+    const obj = JSON.parse(savedStr);
+    const q = new URLSearchParams(obj).toString();
+    document.querySelectorAll('a[data-append-aff="true"]').forEach(a => {
+      try {
+        const u = new URL(a.href, window.location.origin);
+        if (q) {
+          q.split('&').forEach(pair=>{
+            const [k,v] = pair.split('=');
+            if (!u.searchParams.has(k)) u.searchParams.set(k,v);
+          });
+          a.href = u.toString();
+        }
+      } catch(e){}
+    });
+  }
+})();
+</script>
+<!-- === /Cookie Consent + Affiliate Param Saver === -->
 </body>
 </html>
