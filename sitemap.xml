@@ -4,34 +4,84 @@
   <!-- Core Pages -->
   <url>
     <loc>https://www.smart-store-global.com/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/about.html</loc>
+    <loc>https://www.smart-store-global.com/about</loc>
+    <lastmod>2025-10-26</lastmod>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/contact.html</loc>
+    <loc>https://www.smart-store-global.com/contact</loc>
+    <lastmod>2025-10-26</lastmod>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/privacy-policy.html</loc>
+    <loc>https://www.smart-store-global.com/privacy-policy</loc>
+    <lastmod>2025-10-26</lastmod>
+    <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/terms-conditions.html</loc>
+    <loc>https://www.smart-store-global.com/terms-conditions</loc>
+    <lastmod>2025-10-26</lastmod>
+    <priority>0.6</priority>
   </url>
 
   <!-- Category Pages -->
   <url>
-    <loc>https://www.smart-store-global.com/health.html</loc>
+    <loc>https://www.smart-store-global.com/health</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.9</priority>
   </url>
 
   <!-- Product Pages -->
   <url>
-    <loc>https://www.smart-store-global.com/moringa-magic.html</loc>
+    <loc>https://www.smart-store-global.com/moringa-magic</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/prodentim.html</loc>
+    <loc>https://www.smart-store-global.com/prodentim</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.smart-store-global.com/gluco-shield-pro.html</loc>
+    <loc>https://www.smart-store-global.com/gluco-shield-pro</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog / Article Pages -->
+  <url>
+    <loc>https://www.smart-store-global.com/health-concerns-supplements</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.smart-store-global.com/baby-strollers-terrain</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.smart-store-global.com/wellness-trends-2025</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.smart-store-global.com/articles</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
