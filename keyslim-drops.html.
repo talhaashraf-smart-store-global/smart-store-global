@@ -3,13 +3,24 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>KeySlim Drops — Natural Weight Support | Smart Store Global</title>
+<title>KeySlim Drops — Plant-Based Weight Support | Smart Store Global</title>
+
+<!-- SEO -->
+<meta name="description" content="KeySlim Drops review: plant-based liquid formula for metabolism, cravings and energy. How it works, benefits, ingredients, usage tips, FAQs & best place to buy." />
+<link rel="canonical" href="https://www.smart-store-global.com/keyslim-drops.html" />
+
+<!-- Open Graph (optional but useful) -->
+<meta property="og:title" content="KeySlim Drops — Plant-Based Weight Support" />
+<meta property="og:description" content="Quick breakdown of KeySlim Drops: benefits, ingredients, how to use, and where to buy safely." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.smart-store-global.com/keyslim-drops.html" />
+<meta property="og:image" content="https://www.smart-store-global.com/keyslim-bottle.jpg" />
 
 <!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Favicon (optional, same as site) -->
+<!-- Favicon (same as site) -->
 <link rel="icon" href="/logo.jpg" type="image/jpeg">
 <link rel="apple-touch-icon" href="/logo.jpg">
 
@@ -129,7 +140,7 @@
       <h1>KeySlim Drops — Plant-Based Weight Support</h1>
       <p class="sub">A liquid blend designed to support metabolism, energy, and appetite control. Read our quick breakdown before you buy.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Get KeySlim Drops →</a>
+        <a class="btn" href="https://getkeyslimdrops.cc/vsl1/#aff=talhaashraf1108" rel="nofollow noopener" target="_blank">Get KeySlim Drops →</a>
         <a class="btn" href="#benefits" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">See Benefits</a>
       </div>
       <div class="spec">
@@ -160,11 +171,11 @@
       <h2 style="margin-top:18px;">Key Ingredients (Typical Blend)</h2>
       <ul class="klist">
         <li><strong>African Mango (Irvingia gabonensis):</strong> studied for weight-management support.</li>
-        <li><strong>Macuna Pruriens & L-Tyrosine:</strong> support mood and focus during diet changes.</li>
+        <li><strong>Mucuna Pruriens & L-Tyrosine:</strong> support mood and focus during diet changes.</li>
         <li><strong>Ginseng & Guarana:</strong> gentle energy and thermogenic support.</li>
         <li><strong>Grape Seed & Gymnema:</strong> antioxidant support and sweet-craving control.</li>
       </ul>
-      <p class="note">Exact formula and dosages vary by manufacturer batch; check the official label for the current blend.</p>
+      <p class="note">Exact formula and dosages may vary by batch; check the official label for the current blend.</p>
 
       <h2 style="margin-top:18px;">How to Use</h2>
       <ul class="klist">
@@ -199,7 +210,7 @@
       </div>
 
       <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Check Price & Availability →</a>
+        <a class="btn" href="https://getkeyslimdrops.cc/vsl1/#aff=talhaashraf1108" rel="nofollow noopener" target="_blank">Check Price & Availability →</a>
         <a class="btn" href="#faq" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">FAQ</a>
       </div>
     </article>
@@ -227,7 +238,7 @@
       </div>
 
       <div style="margin-top:16px;text-align:center">
-        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Buy KeySlim Drops</a>
+        <a class="btn" href="https://getkeyslimdrops.cc/vsl1/#aff=talhaashraf1108" rel="nofollow noopener" target="_blank">Buy KeySlim Drops</a>
       </div>
     </aside>
   </section>
@@ -246,12 +257,12 @@
       <dd>Most people tolerate it well. Sensitive users may notice mild jitter if combined with other stimulants. Start with label directions.</dd>
     </dl>
     <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-      <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Go to Official Page →</a>
+      <a class="btn" href="https://getkeyslimdrops.cc/vsl1/#aff=talhaashraf1108" rel="nofollow noopener" target="_blank">Go to Official Page →</a>
       <a class="btn" href="/index.html" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">← Back to Home</a>
     </div>
   </section>
 
-  <!-- NEWSLETTER (optional keep same look) -->
+  <!-- NEWSLETTER -->
   <section class="card" style="margin-top:18px">
     <h2>Stay Updated — New Deals & Honest Reviews</h2>
     <p class="sub">Join the Smart Shop list and get the latest wellness picks and price drops.</p>
@@ -278,7 +289,7 @@
   <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
 </div>
 
-<!-- Dropdown script (same behavior as index) -->
+<!-- Dropdown script -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const menu = document.getElementById("categoryMenu");
