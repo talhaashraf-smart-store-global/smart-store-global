@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KeySlim Drops — Natural Weight Support | Smart Store Global</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Favicon (optional, same as site) -->
+<link rel="icon" href="/logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/logo.jpg">
+
+<style>
+  :root{
+    --bg:#0f1115;
+    --card:#151821;
+    --text:#f9f9f9;
+    --muted:#c9c9c9;
+    --accent:#ffd000;
+    --accent2:#ffe24d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .container{max-width:1200px;margin:0 auto;padding:28px}
+
+  /* Header (same as index) */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 16px;background:#111;color:#fff;position:sticky;top:0;z-index:100;
+    border-bottom:1px solid rgba(255,255,255,.1);border-radius:14px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo img{height:42px;width:auto;border-radius:8px;display:block}
+  .brand-name{font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:18px}
+  .tagline{font-size:12px;color:#cfcfcf;margin-top:2px}
+  .nav-actions{display:flex;align-items:center;gap:12px}
+  .dropdown{position:relative;z-index:1000}
+  .dropbtn{background:var(--accent2);color:#111;border:none;border-radius:10px;
+           padding:10px 14px;font-weight:800;cursor:pointer}
+  .dropdown-menu{position:absolute;right:0;top:110%;background:#fff;color:#222;min-width:220px;
+                 border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:6px;display:none}
+  .dropdown-menu a{display:block;padding:10px 12px;border-radius:8px;color:#222;text-decoration:none}
+  .dropdown-menu a:hover{background:#f3f4f6}
+  .dropdown.open .dropdown-menu{display:block}
+
+  /* Layout */
+  .hero{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center;
+    background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;
+    margin-top:18px;
+  }
+  .hero img{width:100%;height:auto;object-fit:cover;border-radius:12px;background:#000}
+  h1{font-size:clamp(26px,3.4vw,40px);margin:.2em 0}
+  .sub{color:#cfcfcf;margin:6px 0 10px}
+
+  .btn{display:inline-block;background:var(--accent);color:#111;font-weight:800;border-radius:12px;
+       padding:12px 18px;text-decoration:none}
+  .btn:hover{background:var(--accent2)}
+
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+  .card h2{margin:.2em 0 8px}
+  .klist{margin:0;padding-left:18px;color:#e7e7e7}
+  .klist li{margin:8px 0;color:#cfcfcf}
+
+  .badge{display:inline-block;background:var(--accent2);color:#111;font-weight:800;border-radius:999px;
+         padding:2px 10px;font-size:12px}
+
+  .spec{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  .spec div{background:#14161a;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px;color:#dcdcdc;font-size:14px}
+
+  .faq dt{font-weight:800;margin-top:12px}
+  .faq dd{margin:4px 0 12px;color:#cfcfcf}
+
+  .note{font-size:12px;color:#a9a9a9;margin-top:10px}
+
+  /* Footer */
+  .socials{margin-top:26px;text-align:center}
+  .socials a{margin:0 5px;text-decoration:none}
+  .socials a.facebook{color:#3b5998}
+  .socials a.instagram{color:#E4405F}
+  .footer{margin:36px 0 10px;color:#a7a7a7;font-size:12px;text-align:center}
+  .footer-links{text-align:center;margin-bottom:12px}
+  .footer-links a{color:var(--muted);margin:0 8px;text-decoration:none;font-size:14px}
+  .footer-links a:hover{text-decoration:underline}
+
+  @media(max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="/" class="logo"><img src="logo.jpg" alt="Smart Store Global"></a>
+      <div>
+        <strong class="brand-name">Smart Store Global</strong>
+        <div class="tagline">Deals, reviews & smarter shopping</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="dropdown" id="categoryMenu">
+        <button class="dropbtn" id="dropToggle" type="button" aria-expanded="false">Explore Categories ▾</button>
+        <div class="dropdown-menu" aria-label="Categories">
+          <a href="/index.html">Home</a>
+          <a href="/health.html">Health</a>
+          <a href="#fitness">Fitness</a>
+          <a href="#tech">Tech</a>
+          <a href="#beauty">Beauty</a>
+          <a href="#parenting">Parenting</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="keyslim-bottle.jpg" alt="KeySlim Drops bottle">
+    <div>
+      <span class="badge">Editor’s Pick</span>
+      <h1>KeySlim Drops — Plant-Based Weight Support</h1>
+      <p class="sub">A liquid blend designed to support metabolism, energy, and appetite control. Read our quick breakdown before you buy.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Get KeySlim Drops →</a>
+        <a class="btn" href="#benefits" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">See Benefits</a>
+      </div>
+      <div class="spec">
+        <div>Form: Liquid drops</div>
+        <div>Use: Daily (under tongue)</div>
+        <div>Focus: Metabolism & cravings</div>
+        <div>Audience: Men & Women</div>
+      </div>
+      <p class="note">Always read the label and consult your healthcare provider if you have any medical condition or take medications.</p>
+    </div>
+  </section>
+
+  <!-- MAIN GRID -->
+  <section class="grid">
+    <!-- LEFT: Review content -->
+    <article class="card">
+      <h2 id="overview">What Is KeySlim Drops?</h2>
+      <p>KeySlim Drops is a plant-based liquid supplement formulated to support a healthy metabolism, balanced appetite, and steady energy. The sublingual (under-the-tongue) format can enhance absorption versus capsules.</p>
+
+      <h2 id="benefits" style="margin-top:18px;">Top Benefits</h2>
+      <ul class="klist">
+        <li><strong>Metabolism support:</strong> botanicals traditionally used to help the body burn calories efficiently.</li>
+        <li><strong>Craving control:</strong> select herbs may help reduce between-meal snacking.</li>
+        <li><strong>Energy & mood:</strong> gentle support to feel more active during the day.</li>
+        <li><strong>Digestive comfort:</strong> ingredients often used to soothe the gut.</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">Key Ingredients (Typical Blend)</h2>
+      <ul class="klist">
+        <li><strong>African Mango (Irvingia gabonensis):</strong> studied for weight-management support.</li>
+        <li><strong>Macuna Pruriens & L-Tyrosine:</strong> support mood and focus during diet changes.</li>
+        <li><strong>Ginseng & Guarana:</strong> gentle energy and thermogenic support.</li>
+        <li><strong>Grape Seed & Gymnema:</strong> antioxidant support and sweet-craving control.</li>
+      </ul>
+      <p class="note">Exact formula and dosages vary by manufacturer batch; check the official label for the current blend.</p>
+
+      <h2 style="margin-top:18px;">How to Use</h2>
+      <ul class="klist">
+        <li>Shake well. Place the recommended drops under the tongue.</li>
+        <li>Hold for 10–15 seconds before swallowing for better absorption.</li>
+        <li>Best taken consistently (e.g., morning and early afternoon).</li>
+        <li>Pair with balanced meals, hydration, and light activity for best results.</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">Who It’s Best For</h2>
+      <p>If you prefer a stimulant-light formula in a fast-absorbing liquid, KeySlim Drops can be a convenient add-on to your routine. It’s not a magic fix — think of it as gentle support alongside diet, sleep, and movement.</p>
+
+      <h2 style="margin-top:18px;">Pros & Cons</h2>
+      <div class="spec" style="grid-template-columns:1fr 1fr">
+        <div>
+          <strong>Pros</strong>
+          <ul class="klist">
+            <li>Easy liquid dosing, no capsules</li>
+            <li>Plant-based ingredients</li>
+            <li>Targets cravings + energy</li>
+            <li>Pairs well with routine changes</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Cons</strong>
+          <ul class="klist">
+            <li>Results vary person-to-person</li>
+            <li>Taste can be herbal</li>
+            <li>Not a replacement for diet/sleep</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Check Price & Availability →</a>
+        <a class="btn" href="#faq" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">FAQ</a>
+      </div>
+    </article>
+
+    <!-- RIGHT: Quick box -->
+    <aside class="card">
+      <h2>Quick Facts</h2>
+      <ul class="klist">
+        <li>Format: Liquid drops</li>
+        <li>Servings: See label</li>
+        <li>Made for: Adults</li>
+        <li>Diet-friendly: Typically non-GMO</li>
+        <li>Ships: U.S. (varies)</li>
+      </ul>
+
+      <h2 style="margin-top:18px;">Best Pairings</h2>
+      <ul class="klist">
+        <li>High-protein breakfast</li>
+        <li>Daily step count (walks)</li>
+        <li>Hydration habit (2–3L/day)</li>
+      </ul>
+
+      <div style="margin-top:16px;text-align:center">
+        <img src="keyslim-lifestyle.jpg" alt="Lifestyle with KeySlim" style="width:100%;border-radius:12px;object-fit:cover;background:#000">
+      </div>
+
+      <div style="margin-top:16px;text-align:center">
+        <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Buy KeySlim Drops</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card" id="faq" style="margin-top:18px">
+    <h2>FAQs</h2>
+    <dl class="faq">
+      <dt>Is it safe?</dt>
+      <dd>KeySlim Drops uses common botanical ingredients. If you have a medical condition, are pregnant/nursing, or take prescriptions, consult your healthcare provider first.</dd>
+
+      <dt>How soon can I see results?</dt>
+      <dd>Some users report appetite and energy changes within 1–2 weeks with consistent use and lifestyle support. Individual results vary.</dd>
+
+      <dt>Any side effects?</dt>
+      <dd>Most people tolerate it well. Sensitive users may notice mild jitter if combined with other stimulants. Start with label directions.</dd>
+    </dl>
+    <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="YOUR_AFFILIATE_LINK" data-append-aff="true" rel="nofollow">Go to Official Page →</a>
+      <a class="btn" href="/index.html" style="background:#222;color:#fff;border:1px solid rgba(255,255,255,.15)">← Back to Home</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER (optional keep same look) -->
+  <section class="card" style="margin-top:18px">
+    <h2>Stay Updated — New Deals & Honest Reviews</h2>
+    <p class="sub">Join the Smart Shop list and get the latest wellness picks and price drops.</p>
+    <form onsubmit="event.preventDefault(); alert('Thanks for subscribing!');" style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" placeholder="Enter your email" required
+             style="background:#14161a;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;min-width:280px;outline:none">
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- SOCIALS + FOOTER LINKS -->
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61582590449680" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.instagram.com/the.smartshop1/" class="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram fa-lg"></i></a>
+  </div>
+
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About Us</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/terms-conditions.html">Terms & Conditions</a>
+    <a href="/contact.html">Contact Us</a>
+  </div>
+  <p class="footer">© THE SMART SHOP • Smart Picks. Smarter Living.</p>
+</div>
+
+<!-- Dropdown script (same behavior as index) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.getElementById("categoryMenu");
+  const toggle = document.getElementById("dropToggle");
+  if (!menu || !toggle) return;
+  function closeMenu(){ menu.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  function openMenu(){ menu.classList.add("open"); toggle.setAttribute("aria-expanded","true"); }
+  toggle.addEventListener("click", function(e){ e.stopPropagation(); menu.classList.contains("open") ? closeMenu() : openMenu(); });
+  document.addEventListener("click", function(e){ if (!menu.contains(e.target)) closeMenu(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeMenu(); });
+});
+</script>
+</body>
+</html>
